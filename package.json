@@ -53,6 +53,7 @@
     "embla-carousel-react": "^8.0.3",
     "eslint": "8.51.0",
     "eslint-config-next": "^14.2.3",
+    "hashids": "^2.3.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.378.0",
     "nanoid": "^5.0.1",

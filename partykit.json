@@ -7,7 +7,7 @@
     "chatroom": "party/chatRoom.ts",
     "chatrooms": "party/chatRooms.ts",
     "cursors": "party/cursors.ts",
-    "game": "party/game.ts"
+    "game": "party/game.party.ts"
   },
   "serve": {
     "path": "party/public"
