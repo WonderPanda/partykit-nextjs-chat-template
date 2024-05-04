@@ -6,7 +6,8 @@
     "ai": "party/ai.ts",
     "chatroom": "party/chatRoom.ts",
     "chatrooms": "party/chatRooms.ts",
-    "cursors": "party/cursors.ts"
+    "cursors": "party/cursors.ts",
+    "game": "party/game.ts"
   },
   "serve": {
     "path": "party/public"

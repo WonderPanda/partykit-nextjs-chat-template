@@ -1,6 +1,8 @@
 import NextAuth, { type NextAuthOptions } from "next-auth";
 import type { User } from "@/party/utils/auth";
 import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+import Google from "next-auth/providers/google";
 
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_SECRET = process.env.GITHUB_SECRET;
@@ -19,6 +21,10 @@ export const authOptions: NextAuthOptions = {
       clientId: GITHUB_CLIENT_ID,
       clientSecret: GITHUB_SECRET,
     }),
+    // Google({
+    //   clientId: GITHUB_CLIENT_ID,
+    //   clientSecret: GITHUB_SECRET,
+    // }),
   ],
   callbacks: {
     async redirect({ url, baseUrl }) {
