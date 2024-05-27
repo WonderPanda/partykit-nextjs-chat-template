@@ -1,5 +1,7 @@
 import type * as Party from "partykit/server";
 import { notFound, ok } from "./utils/response";
+import { createActor } from "xstate";
+import { gameServerMachine } from "@/lib/game-server.machine";
 
 export default class GameServer implements Party.Server {
   constructor(public party: Party.Party) {}
@@ -18,6 +20,16 @@ export default class GameServer implements Party.Server {
       }
 
       await this.party.storage.put("id", this.party.id);
+
+      const actor = createActor(gameServerMachine, {
+        input: {
+          gameId: this.party.id,
+        },
+      }).start();
+
+      // https://stately.ai/docs/persistence
+      const snapshot = actor.getPersistedSnapshot();
+      await this.party.storage.put("game", snapshot);
       return ok();
     }
 
